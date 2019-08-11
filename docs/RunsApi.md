@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **runsForRoute**
-> V3RunsResponse runsForRoute(routeId, token)
+> V3RunsResponse runsForRoute(routeId)
 
 View all trip/service runs for a specific route ID
 
@@ -26,10 +26,9 @@ import 'package:ptv_api_client/api.dart';
 
 var api_instance = RunsApi();
 var routeId = 56; // int | Identifier of route; values returned by Routes API - v3/routes.
-var token = token_example; // String | Please ignore
 
 try { 
-    var result = api_instance.runsForRoute(routeId, token);
+    var result = api_instance.runsForRoute(routeId);
     print(result);
 } catch (e) {
     print("Exception when calling RunsApi->runsForRoute: $e\n");
@@ -41,7 +40,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **routeId** | **int**| Identifier of route; values returned by Routes API - v3/routes. | [default to null]
- **token** | **String**| Please ignore | [optional] [default to null]
 
 ### Return type
 
@@ -59,7 +57,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **runsForRouteAndRouteType**
-> V3RunsResponse runsForRouteAndRouteType(routeId, routeType, token)
+> V3RunsResponse runsForRouteAndRouteType(routeId, routeType)
 
 View all trip/service runs for a specific route ID and route type
 
@@ -70,10 +68,9 @@ import 'package:ptv_api_client/api.dart';
 var api_instance = RunsApi();
 var routeId = 56; // int | Identifier of route; values returned by Routes API - v3/routes.
 var routeType = 56; // int | Number identifying transport mode; values returned via RouteTypes API
-var token = token_example; // String | Please ignore
 
 try { 
-    var result = api_instance.runsForRouteAndRouteType(routeId, routeType, token);
+    var result = api_instance.runsForRouteAndRouteType(routeId, routeType);
     print(result);
 } catch (e) {
     print("Exception when calling RunsApi->runsForRouteAndRouteType: $e\n");
@@ -86,7 +83,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **routeId** | **int**| Identifier of route; values returned by Routes API - v3/routes. | [default to null]
  **routeType** | **int**| Number identifying transport mode; values returned via RouteTypes API | [default to null]
- **token** | **String**| Please ignore | [optional] [default to null]
 
 ### Return type
 
@@ -104,7 +100,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **runsForRun**
-> V3RunsResponse runsForRun(runId, token)
+> V3RunsResponse runsForRun(runId)
 
 View all trip/service runs for a specific run ID
 
@@ -114,10 +110,9 @@ import 'package:ptv_api_client/api.dart';
 
 var api_instance = RunsApi();
 var runId = 56; // int | Identifier of a trip/service run; values returned by Runs API - /v3/route/{route_id} and Departures API
-var token = token_example; // String | Please ignore
 
 try { 
-    var result = api_instance.runsForRun(runId, token);
+    var result = api_instance.runsForRun(runId);
     print(result);
 } catch (e) {
     print("Exception when calling RunsApi->runsForRun: $e\n");
@@ -129,7 +124,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **runId** | **int**| Identifier of a trip/service run; values returned by Runs API - /v3/route/{route_id} and Departures API | [default to null]
- **token** | **String**| Please ignore | [optional] [default to null]
 
 ### Return type
 
@@ -147,7 +141,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **runsForRunAndRouteType**
-> V3RunResponse runsForRunAndRouteType(runId, routeType, token)
+> V3RunResponse runsForRunAndRouteType(runId, routeType)
 
 View the trip/service run for a specific run ID and route type
 
@@ -158,10 +152,9 @@ import 'package:ptv_api_client/api.dart';
 var api_instance = RunsApi();
 var runId = 56; // int | Identifier of a trip/service run; values returned by Runs API - /v3/route/{route_id} and Departures API
 var routeType = 56; // int | Number identifying transport mode; values returned via RouteTypes API
-var token = token_example; // String | Please ignore
 
 try { 
-    var result = api_instance.runsForRunAndRouteType(runId, routeType, token);
+    var result = api_instance.runsForRunAndRouteType(runId, routeType);
     print(result);
 } catch (e) {
     print("Exception when calling RunsApi->runsForRunAndRouteType: $e\n");
@@ -174,7 +167,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **runId** | **int**| Identifier of a trip/service run; values returned by Runs API - /v3/route/{route_id} and Departures API | [default to null]
  **routeType** | **int**| Number identifying transport mode; values returned via RouteTypes API | [default to null]
- **token** | **String**| Please ignore | [optional] [default to null]
 
 ### Return type
 

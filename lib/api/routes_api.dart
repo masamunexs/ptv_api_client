@@ -10,7 +10,7 @@ class RoutesApi {
   /// View route names and numbers for all routes
   ///
   /// 
-  Future<V3RouteResponse> routesOneOrMoreRoutes({ List<int> routeTypes, String routeName, String token }) async {
+  Future<V3RouteResponse> routesOneOrMoreRoutes({ List<int> routeTypes, String routeName }) async {
     Object postBody;
 
     // verify required params are set
@@ -27,9 +27,6 @@ class RoutesApi {
     }
     if(routeName != null) {
       queryParams.addAll(_convertParametersForCollectionFormat("", "route_name", routeName));
-    }
-    if(token != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "token", token));
     }
 
     List<String> contentTypes = [];
@@ -66,7 +63,7 @@ class RoutesApi {
   /// View route name and number for specific route ID
   ///
   /// 
-  Future<V3RouteResponse> routesRouteFromId(int routeId, { String token }) async {
+  Future<V3RouteResponse> routesRouteFromId(int routeId) async {
     Object postBody;
 
     // verify required params are set
@@ -81,9 +78,6 @@ class RoutesApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    if(token != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "token", token));
-    }
 
     List<String> contentTypes = [];
 

@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **routeTypesGetRouteTypes**
-> V3RouteTypesResponse routeTypesGetRouteTypes(token)
+> V3RouteTypesResponse routeTypesGetRouteTypes()
 
 View all route types and their names
 
@@ -22,10 +22,9 @@ View all route types and their names
 import 'package:ptv_api_client/api.dart';
 
 var api_instance = RouteTypesApi();
-var token = token_example; // String | Please ignore
 
 try { 
-    var result = api_instance.routeTypesGetRouteTypes(token);
+    var result = api_instance.routeTypesGetRouteTypes();
     print(result);
 } catch (e) {
     print("Exception when calling RouteTypesApi->routeTypesGetRouteTypes: $e\n");
@@ -33,10 +32,7 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **token** | **String**| Please ignore | [optional] [default to null]
+This endpoint does not need any parameter.
 
 ### Return type
 

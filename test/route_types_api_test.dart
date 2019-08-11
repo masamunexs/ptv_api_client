@@ -9,7 +9,7 @@ void main() {
   group('tests for RouteTypesApi', () {
     // View all route types and their names
     //
-    //Future<V3RouteTypesResponse> routeTypesGetRouteTypes({ String token }) async 
+    //Future<V3RouteTypesResponse> routeTypesGetRouteTypes() async 
     test('test routeTypesGetRouteTypes', () async {
       // TODO
     });

@@ -10,7 +10,7 @@ class DisruptionsApi {
   /// View all disruptions for all route types
   ///
   /// 
-  Future<V3DisruptionsResponse> disruptionsGetAllDisruptions({ List<int> routeTypes, List<int> disruptionModes, String disruptionStatus, String token }) async {
+  Future<V3DisruptionsResponse> disruptionsGetAllDisruptions({ List<int> routeTypes, List<int> disruptionModes, String disruptionStatus }) async {
     Object postBody;
 
     // verify required params are set
@@ -30,9 +30,6 @@ class DisruptionsApi {
     }
     if(disruptionStatus != null) {
       queryParams.addAll(_convertParametersForCollectionFormat("", "disruption_status", disruptionStatus));
-    }
-    if(token != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "token", token));
     }
 
     List<String> contentTypes = [];
@@ -69,7 +66,7 @@ class DisruptionsApi {
   /// View a specific disruption
   ///
   /// 
-  Future<V3DisruptionResponse> disruptionsGetDisruptionById(int disruptionId, { String token }) async {
+  Future<V3DisruptionResponse> disruptionsGetDisruptionById(int disruptionId) async {
     Object postBody;
 
     // verify required params are set
@@ -84,9 +81,6 @@ class DisruptionsApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    if(token != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "token", token));
-    }
 
     List<String> contentTypes = [];
 
@@ -122,7 +116,7 @@ class DisruptionsApi {
   /// Get all disruption modes
   ///
   /// 
-  Future<V3DisruptionModesResponse> disruptionsGetDisruptionModes({ String token }) async {
+  Future<V3DisruptionModesResponse> disruptionsGetDisruptionModes() async {
     Object postBody;
 
     // verify required params are set
@@ -134,9 +128,6 @@ class DisruptionsApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    if(token != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "token", token));
-    }
 
     List<String> contentTypes = [];
 
@@ -172,7 +163,7 @@ class DisruptionsApi {
   /// View all disruptions for a particular route
   ///
   /// 
-  Future<V3DisruptionsResponse> disruptionsGetDisruptionsByRoute(int routeId, { String disruptionStatus, String token }) async {
+  Future<V3DisruptionsResponse> disruptionsGetDisruptionsByRoute(int routeId, { String disruptionStatus }) async {
     Object postBody;
 
     // verify required params are set
@@ -189,9 +180,6 @@ class DisruptionsApi {
     Map<String, String> formParams = {};
     if(disruptionStatus != null) {
       queryParams.addAll(_convertParametersForCollectionFormat("", "disruption_status", disruptionStatus));
-    }
-    if(token != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "token", token));
     }
 
     List<String> contentTypes = [];
@@ -228,7 +216,7 @@ class DisruptionsApi {
   /// View all disruptions for a particular route and stop
   ///
   /// 
-  Future<V3DisruptionsResponse> disruptionsGetDisruptionsByRouteAndStop(int routeId, int stopId, { String disruptionStatus, String token }) async {
+  Future<V3DisruptionsResponse> disruptionsGetDisruptionsByRouteAndStop(int routeId, int stopId, { String disruptionStatus }) async {
     Object postBody;
 
     // verify required params are set
@@ -248,9 +236,6 @@ class DisruptionsApi {
     Map<String, String> formParams = {};
     if(disruptionStatus != null) {
       queryParams.addAll(_convertParametersForCollectionFormat("", "disruption_status", disruptionStatus));
-    }
-    if(token != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "token", token));
     }
 
     List<String> contentTypes = [];
@@ -287,7 +272,7 @@ class DisruptionsApi {
   /// View all disruptions for a particular stop
   ///
   /// 
-  Future<V3DisruptionsResponse> disruptionsGetDisruptionsByStop(int stopId, { String disruptionStatus, String token }) async {
+  Future<V3DisruptionsResponse> disruptionsGetDisruptionsByStop(int stopId, { String disruptionStatus }) async {
     Object postBody;
 
     // verify required params are set
@@ -304,9 +289,6 @@ class DisruptionsApi {
     Map<String, String> formParams = {};
     if(disruptionStatus != null) {
       queryParams.addAll(_convertParametersForCollectionFormat("", "disruption_status", disruptionStatus));
-    }
-    if(token != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "token", token));
     }
 
     List<String> contentTypes = [];

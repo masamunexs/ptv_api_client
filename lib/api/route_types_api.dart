@@ -10,7 +10,7 @@ class RouteTypesApi {
   /// View all route types and their names
   ///
   /// 
-  Future<V3RouteTypesResponse> routeTypesGetRouteTypes({ String token }) async {
+  Future<V3RouteTypesResponse> routeTypesGetRouteTypes() async {
     Object postBody;
 
     // verify required params are set
@@ -22,9 +22,6 @@ class RouteTypesApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    if(token != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "token", token));
-    }
 
     List<String> contentTypes = [];
 

@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 
 # **disruptionsGetAllDisruptions**
-> V3DisruptionsResponse disruptionsGetAllDisruptions(routeTypes, disruptionModes, disruptionStatus, token)
+> V3DisruptionsResponse disruptionsGetAllDisruptions(routeTypes, disruptionModes, disruptionStatus)
 
 View all disruptions for all route types
 
@@ -30,10 +30,9 @@ var api_instance = DisruptionsApi();
 var routeTypes = []; // List<int> | Filter by route_type; values returned via RouteTypes API
 var disruptionModes = []; // List<int> | Filter by disruption_mode; values returned via v3/disruptions/modes API
 var disruptionStatus = disruptionStatus_example; // String | Filter by status of disruption
-var token = token_example; // String | Please ignore
 
 try { 
-    var result = api_instance.disruptionsGetAllDisruptions(routeTypes, disruptionModes, disruptionStatus, token);
+    var result = api_instance.disruptionsGetAllDisruptions(routeTypes, disruptionModes, disruptionStatus);
     print(result);
 } catch (e) {
     print("Exception when calling DisruptionsApi->disruptionsGetAllDisruptions: $e\n");
@@ -47,7 +46,6 @@ Name | Type | Description  | Notes
  **routeTypes** | [**List&lt;int&gt;**](int.md)| Filter by route_type; values returned via RouteTypes API | [optional] [default to []]
  **disruptionModes** | [**List&lt;int&gt;**](int.md)| Filter by disruption_mode; values returned via v3/disruptions/modes API | [optional] [default to []]
  **disruptionStatus** | **String**| Filter by status of disruption | [optional] [default to null]
- **token** | **String**| Please ignore | [optional] [default to null]
 
 ### Return type
 
@@ -65,7 +63,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **disruptionsGetDisruptionById**
-> V3DisruptionResponse disruptionsGetDisruptionById(disruptionId, token)
+> V3DisruptionResponse disruptionsGetDisruptionById(disruptionId)
 
 View a specific disruption
 
@@ -75,10 +73,9 @@ import 'package:ptv_api_client/api.dart';
 
 var api_instance = DisruptionsApi();
 var disruptionId = 789; // int | Identifier of disruption; values returned by Disruptions API - /v3/disruptions OR /v3/disruptions/route/{route_id}
-var token = token_example; // String | Please ignore
 
 try { 
-    var result = api_instance.disruptionsGetDisruptionById(disruptionId, token);
+    var result = api_instance.disruptionsGetDisruptionById(disruptionId);
     print(result);
 } catch (e) {
     print("Exception when calling DisruptionsApi->disruptionsGetDisruptionById: $e\n");
@@ -90,7 +87,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **disruptionId** | **int**| Identifier of disruption; values returned by Disruptions API - /v3/disruptions OR /v3/disruptions/route/{route_id} | [default to null]
- **token** | **String**| Please ignore | [optional] [default to null]
 
 ### Return type
 
@@ -108,7 +104,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **disruptionsGetDisruptionModes**
-> V3DisruptionModesResponse disruptionsGetDisruptionModes(token)
+> V3DisruptionModesResponse disruptionsGetDisruptionModes()
 
 Get all disruption modes
 
@@ -117,10 +113,9 @@ Get all disruption modes
 import 'package:ptv_api_client/api.dart';
 
 var api_instance = DisruptionsApi();
-var token = token_example; // String | Please ignore
 
 try { 
-    var result = api_instance.disruptionsGetDisruptionModes(token);
+    var result = api_instance.disruptionsGetDisruptionModes();
     print(result);
 } catch (e) {
     print("Exception when calling DisruptionsApi->disruptionsGetDisruptionModes: $e\n");
@@ -128,10 +123,7 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **token** | **String**| Please ignore | [optional] [default to null]
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -149,7 +141,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **disruptionsGetDisruptionsByRoute**
-> V3DisruptionsResponse disruptionsGetDisruptionsByRoute(routeId, disruptionStatus, token)
+> V3DisruptionsResponse disruptionsGetDisruptionsByRoute(routeId, disruptionStatus)
 
 View all disruptions for a particular route
 
@@ -160,10 +152,9 @@ import 'package:ptv_api_client/api.dart';
 var api_instance = DisruptionsApi();
 var routeId = 56; // int | Identifier of route; values returned by Routes API - v3/routes
 var disruptionStatus = disruptionStatus_example; // String | Filter by status of disruption
-var token = token_example; // String | Please ignore
 
 try { 
-    var result = api_instance.disruptionsGetDisruptionsByRoute(routeId, disruptionStatus, token);
+    var result = api_instance.disruptionsGetDisruptionsByRoute(routeId, disruptionStatus);
     print(result);
 } catch (e) {
     print("Exception when calling DisruptionsApi->disruptionsGetDisruptionsByRoute: $e\n");
@@ -176,7 +167,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **routeId** | **int**| Identifier of route; values returned by Routes API - v3/routes | [default to null]
  **disruptionStatus** | **String**| Filter by status of disruption | [optional] [default to null]
- **token** | **String**| Please ignore | [optional] [default to null]
 
 ### Return type
 
@@ -194,7 +184,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **disruptionsGetDisruptionsByRouteAndStop**
-> V3DisruptionsResponse disruptionsGetDisruptionsByRouteAndStop(routeId, stopId, disruptionStatus, token)
+> V3DisruptionsResponse disruptionsGetDisruptionsByRouteAndStop(routeId, stopId, disruptionStatus)
 
 View all disruptions for a particular route and stop
 
@@ -206,10 +196,9 @@ var api_instance = DisruptionsApi();
 var routeId = 56; // int | Identifier of route; values returned by Routes API - v3/routes
 var stopId = 56; // int | Identifier of stop; values returned by Stops API - v3/stops
 var disruptionStatus = disruptionStatus_example; // String | Filter by status of disruption
-var token = token_example; // String | Please ignore
 
 try { 
-    var result = api_instance.disruptionsGetDisruptionsByRouteAndStop(routeId, stopId, disruptionStatus, token);
+    var result = api_instance.disruptionsGetDisruptionsByRouteAndStop(routeId, stopId, disruptionStatus);
     print(result);
 } catch (e) {
     print("Exception when calling DisruptionsApi->disruptionsGetDisruptionsByRouteAndStop: $e\n");
@@ -223,7 +212,6 @@ Name | Type | Description  | Notes
  **routeId** | **int**| Identifier of route; values returned by Routes API - v3/routes | [default to null]
  **stopId** | **int**| Identifier of stop; values returned by Stops API - v3/stops | [default to null]
  **disruptionStatus** | **String**| Filter by status of disruption | [optional] [default to null]
- **token** | **String**| Please ignore | [optional] [default to null]
 
 ### Return type
 
@@ -241,7 +229,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **disruptionsGetDisruptionsByStop**
-> V3DisruptionsResponse disruptionsGetDisruptionsByStop(stopId, disruptionStatus, token)
+> V3DisruptionsResponse disruptionsGetDisruptionsByStop(stopId, disruptionStatus)
 
 View all disruptions for a particular stop
 
@@ -252,10 +240,9 @@ import 'package:ptv_api_client/api.dart';
 var api_instance = DisruptionsApi();
 var stopId = 56; // int | Identifier of stop; values returned by Stops API - v3/stops
 var disruptionStatus = disruptionStatus_example; // String | Filter by status of disruption
-var token = token_example; // String | Please ignore
 
 try { 
-    var result = api_instance.disruptionsGetDisruptionsByStop(stopId, disruptionStatus, token);
+    var result = api_instance.disruptionsGetDisruptionsByStop(stopId, disruptionStatus);
     print(result);
 } catch (e) {
     print("Exception when calling DisruptionsApi->disruptionsGetDisruptionsByStop: $e\n");
@@ -268,7 +255,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **stopId** | **int**| Identifier of stop; values returned by Stops API - v3/stops | [default to null]
  **disruptionStatus** | **String**| Filter by status of disruption | [optional] [default to null]
- **token** | **String**| Please ignore | [optional] [default to null]
 
 ### Return type
 

@@ -10,7 +10,7 @@ class DirectionsApi {
   /// View all routes for a direction of travel
   ///
   /// 
-  Future<V3DirectionsResponse> directionsForDirection(int directionId, { String token }) async {
+  Future<V3DirectionsResponse> directionsForDirection(int directionId) async {
     Object postBody;
 
     // verify required params are set
@@ -25,9 +25,6 @@ class DirectionsApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    if(token != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "token", token));
-    }
 
     List<String> contentTypes = [];
 
@@ -63,7 +60,7 @@ class DirectionsApi {
   /// View all routes of a particular type for a direction of travel
   ///
   /// 
-  Future<V3DirectionsResponse> directionsForDirectionAndType(int directionId, int routeType, { String token }) async {
+  Future<V3DirectionsResponse> directionsForDirectionAndType(int directionId, int routeType) async {
     Object postBody;
 
     // verify required params are set
@@ -81,9 +78,6 @@ class DirectionsApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    if(token != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "token", token));
-    }
 
     List<String> contentTypes = [];
 
@@ -119,7 +113,7 @@ class DirectionsApi {
   /// View directions that a route travels in
   ///
   /// 
-  Future<V3DirectionsResponse> directionsForRoute(int routeId, { String token }) async {
+  Future<V3DirectionsResponse> directionsForRoute(int routeId) async {
     Object postBody;
 
     // verify required params are set
@@ -134,9 +128,6 @@ class DirectionsApi {
     List<QueryParam> queryParams = [];
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
-    if(token != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "token", token));
-    }
 
     List<String> contentTypes = [];
 

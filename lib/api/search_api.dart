@@ -10,7 +10,7 @@ class SearchApi {
   /// View stops, routes and myki ticket outlets that match the search term
   ///
   /// 
-  Future<V3SearchResult> searchSearch(String searchTerm, { List<int> routeTypes, double latitude, double longitude, double maxDistance, bool includeAddresses, bool includeOutlets, bool matchStopBySuburb, bool matchRouteBySuburb, bool matchStopByGtfsStopId, String token }) async {
+  Future<V3SearchResult> searchSearch(String searchTerm, { List<int> routeTypes, double latitude, double longitude, double maxDistance, bool includeAddresses, bool includeOutlets, bool matchStopBySuburb, bool matchRouteBySuburb, bool matchStopByGtfsStopId }) async {
     Object postBody;
 
     // verify required params are set
@@ -51,9 +51,6 @@ class SearchApi {
     }
     if(matchStopByGtfsStopId != null) {
       queryParams.addAll(_convertParametersForCollectionFormat("", "match_stop_by_gtfs_stop_id", matchStopByGtfsStopId));
-    }
-    if(token != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "token", token));
     }
 
     List<String> contentTypes = [];

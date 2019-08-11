@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **routesOneOrMoreRoutes**
-> V3RouteResponse routesOneOrMoreRoutes(routeTypes, routeName, token)
+> V3RouteResponse routesOneOrMoreRoutes(routeTypes, routeName)
 
 View route names and numbers for all routes
 
@@ -25,10 +25,9 @@ import 'package:ptv_api_client/api.dart';
 var api_instance = RoutesApi();
 var routeTypes = []; // List<int> | Filter by route_type; values returned via RouteTypes API
 var routeName = routeName_example; // String | Filter by name  of route (accepts partial route name matches)
-var token = token_example; // String | Please ignore
 
 try { 
-    var result = api_instance.routesOneOrMoreRoutes(routeTypes, routeName, token);
+    var result = api_instance.routesOneOrMoreRoutes(routeTypes, routeName);
     print(result);
 } catch (e) {
     print("Exception when calling RoutesApi->routesOneOrMoreRoutes: $e\n");
@@ -41,7 +40,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **routeTypes** | [**List&lt;int&gt;**](int.md)| Filter by route_type; values returned via RouteTypes API | [optional] [default to []]
  **routeName** | **String**| Filter by name  of route (accepts partial route name matches) | [optional] [default to null]
- **token** | **String**| Please ignore | [optional] [default to null]
 
 ### Return type
 
@@ -59,7 +57,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **routesRouteFromId**
-> V3RouteResponse routesRouteFromId(routeId, token)
+> V3RouteResponse routesRouteFromId(routeId)
 
 View route name and number for specific route ID
 
@@ -69,10 +67,9 @@ import 'package:ptv_api_client/api.dart';
 
 var api_instance = RoutesApi();
 var routeId = 56; // int | Identifier of route; values returned by Departures, Directions and Disruptions APIs
-var token = token_example; // String | Please ignore
 
 try { 
-    var result = api_instance.routesRouteFromId(routeId, token);
+    var result = api_instance.routesRouteFromId(routeId);
     print(result);
 } catch (e) {
     print("Exception when calling RoutesApi->routesRouteFromId: $e\n");
@@ -84,7 +81,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **routeId** | **int**| Identifier of route; values returned by Departures, Directions and Disruptions APIs | [default to null]
- **token** | **String**| Please ignore | [optional] [default to null]
 
 ### Return type
 

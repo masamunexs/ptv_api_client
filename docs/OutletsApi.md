@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **outletsGetAllOutlets**
-> V3OutletResponse outletsGetAllOutlets(maxResults, token)
+> V3OutletResponse outletsGetAllOutlets(maxResults)
 
 List all ticket outlets
 
@@ -24,10 +24,9 @@ import 'package:ptv_api_client/api.dart';
 
 var api_instance = OutletsApi();
 var maxResults = 56; // int | Maximum number of results returned (default = 30)
-var token = token_example; // String | Please ignore
 
 try { 
-    var result = api_instance.outletsGetAllOutlets(maxResults, token);
+    var result = api_instance.outletsGetAllOutlets(maxResults);
     print(result);
 } catch (e) {
     print("Exception when calling OutletsApi->outletsGetAllOutlets: $e\n");
@@ -39,7 +38,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **maxResults** | **int**| Maximum number of results returned (default &#x3D; 30) | [optional] [default to null]
- **token** | **String**| Please ignore | [optional] [default to null]
 
 ### Return type
 
@@ -57,7 +55,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **outletsGetOutletsByGeolocation**
-> V3OutletGeolocationResponse outletsGetOutletsByGeolocation(latitude, longitude, maxDistance, maxResults, token)
+> V3OutletGeolocationResponse outletsGetOutletsByGeolocation(latitude, longitude, maxDistance, maxResults)
 
 List ticket outlets near a specific location
 
@@ -70,10 +68,9 @@ var latitude = 3.4; // double | Geographic coordinate of latitude
 var longitude = 3.4; // double | Geographic coordinate of longitude
 var maxDistance = 1.2; // double | Filter by maximum distance (in metres) from location specified via latitude and longitude parameters (default = 300)
 var maxResults = 56; // int | Maximum number of results returned (default = 30)
-var token = token_example; // String | Please ignore
 
 try { 
-    var result = api_instance.outletsGetOutletsByGeolocation(latitude, longitude, maxDistance, maxResults, token);
+    var result = api_instance.outletsGetOutletsByGeolocation(latitude, longitude, maxDistance, maxResults);
     print(result);
 } catch (e) {
     print("Exception when calling OutletsApi->outletsGetOutletsByGeolocation: $e\n");
@@ -88,7 +85,6 @@ Name | Type | Description  | Notes
  **longitude** | **double**| Geographic coordinate of longitude | [default to null]
  **maxDistance** | **double**| Filter by maximum distance (in metres) from location specified via latitude and longitude parameters (default &#x3D; 300) | [optional] [default to null]
  **maxResults** | **int**| Maximum number of results returned (default &#x3D; 30) | [optional] [default to null]
- **token** | **String**| Please ignore | [optional] [default to null]
 
 ### Return type
 

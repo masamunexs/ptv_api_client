@@ -10,7 +10,7 @@ class OutletsApi {
   /// List all ticket outlets
   ///
   /// 
-  Future<V3OutletResponse> outletsGetAllOutlets({ int maxResults, String token }) async {
+  Future<V3OutletResponse> outletsGetAllOutlets({ int maxResults }) async {
     Object postBody;
 
     // verify required params are set
@@ -24,9 +24,6 @@ class OutletsApi {
     Map<String, String> formParams = {};
     if(maxResults != null) {
       queryParams.addAll(_convertParametersForCollectionFormat("", "max_results", maxResults));
-    }
-    if(token != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "token", token));
     }
 
     List<String> contentTypes = [];
@@ -63,7 +60,7 @@ class OutletsApi {
   /// List ticket outlets near a specific location
   ///
   /// 
-  Future<V3OutletGeolocationResponse> outletsGetOutletsByGeolocation(double latitude, double longitude, { double maxDistance, int maxResults, String token }) async {
+  Future<V3OutletGeolocationResponse> outletsGetOutletsByGeolocation(double latitude, double longitude, { double maxDistance, int maxResults }) async {
     Object postBody;
 
     // verify required params are set
@@ -86,9 +83,6 @@ class OutletsApi {
     }
     if(maxResults != null) {
       queryParams.addAll(_convertParametersForCollectionFormat("", "max_results", maxResults));
-    }
-    if(token != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "token", token));
     }
 
     List<String> contentTypes = [];

@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **searchSearch**
-> V3SearchResult searchSearch(searchTerm, routeTypes, latitude, longitude, maxDistance, includeAddresses, includeOutlets, matchStopBySuburb, matchRouteBySuburb, matchStopByGtfsStopId, token)
+> V3SearchResult searchSearch(searchTerm, routeTypes, latitude, longitude, maxDistance, includeAddresses, includeOutlets, matchStopBySuburb, matchRouteBySuburb, matchStopByGtfsStopId)
 
 View stops, routes and myki ticket outlets that match the search term
 
@@ -32,10 +32,9 @@ var includeOutlets = true; // bool | Indicates if outlets will be returned in re
 var matchStopBySuburb = true; // bool | Indicates whether to find stops by suburbs in the search term (default = true)
 var matchRouteBySuburb = true; // bool | Indicates whether to find routes by suburbs in the search term (default = true)
 var matchStopByGtfsStopId = true; // bool | Indicates whether to search for stops according to a metlink stop ID (default = false)
-var token = token_example; // String | Please ignore
 
 try { 
-    var result = api_instance.searchSearch(searchTerm, routeTypes, latitude, longitude, maxDistance, includeAddresses, includeOutlets, matchStopBySuburb, matchRouteBySuburb, matchStopByGtfsStopId, token);
+    var result = api_instance.searchSearch(searchTerm, routeTypes, latitude, longitude, maxDistance, includeAddresses, includeOutlets, matchStopBySuburb, matchRouteBySuburb, matchStopByGtfsStopId);
     print(result);
 } catch (e) {
     print("Exception when calling SearchApi->searchSearch: $e\n");
@@ -56,7 +55,6 @@ Name | Type | Description  | Notes
  **matchStopBySuburb** | **bool**| Indicates whether to find stops by suburbs in the search term (default &#x3D; true) | [optional] [default to null]
  **matchRouteBySuburb** | **bool**| Indicates whether to find routes by suburbs in the search term (default &#x3D; true) | [optional] [default to null]
  **matchStopByGtfsStopId** | **bool**| Indicates whether to search for stops according to a metlink stop ID (default &#x3D; false) | [optional] [default to null]
- **token** | **String**| Please ignore | [optional] [default to null]
 
 ### Return type
 

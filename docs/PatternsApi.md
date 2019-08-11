@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **patternsGetPatternByRun**
-> V3StoppingPattern patternsGetPatternByRun(runId, routeType, expand, stopId, dateUtc, token)
+> V3StoppingPattern patternsGetPatternByRun(runId, routeType, expand, stopId, dateUtc)
 
 View the stopping pattern for a specific trip/service run
 
@@ -27,10 +27,9 @@ var routeType = 56; // int | Number identifying transport mode; values returned 
 var expand = []; // List<String> | Objects to be returned in full (i.e. expanded) - options include: all, stop, route, run, direction, disruption. By default disruptions are expanded.
 var stopId = 56; // int | Filter by stop_id; values returned by Stops API
 var dateUtc = 2013-10-20T19:20:30+01:00; // DateTime | Filter by the date and time of the request (ISO 8601 UTC format)
-var token = token_example; // String | Please ignore
 
 try { 
-    var result = api_instance.patternsGetPatternByRun(runId, routeType, expand, stopId, dateUtc, token);
+    var result = api_instance.patternsGetPatternByRun(runId, routeType, expand, stopId, dateUtc);
     print(result);
 } catch (e) {
     print("Exception when calling PatternsApi->patternsGetPatternByRun: $e\n");
@@ -46,7 +45,6 @@ Name | Type | Description  | Notes
  **expand** | [**List&lt;String&gt;**](String.md)| Objects to be returned in full (i.e. expanded) - options include: all, stop, route, run, direction, disruption. By default disruptions are expanded. | [default to []]
  **stopId** | **int**| Filter by stop_id; values returned by Stops API | [optional] [default to null]
  **dateUtc** | **DateTime**| Filter by the date and time of the request (ISO 8601 UTC format) | [optional] [default to null]
- **token** | **String**| Please ignore | [optional] [default to null]
 
 ### Return type
 

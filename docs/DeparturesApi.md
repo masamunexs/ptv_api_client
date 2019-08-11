@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **departuresGetForStop**
-> V3DeparturesResponse departuresGetForStop(routeType, stopId, platformNumbers, directionId, lookBackwards, gtfs, dateUtc, maxResults, includeCancelled, expand, token)
+> V3DeparturesResponse departuresGetForStop(routeType, stopId, platformNumbers, directionId, lookBackwards, gtfs, dateUtc, maxResults, includeCancelled, expand)
 
 View departures for all routes from a stop
 
@@ -33,10 +33,9 @@ var dateUtc = 2013-10-20T19:20:30+01:00; // DateTime | Filter by the date and ti
 var maxResults = 56; // int | Maximum number of results returned
 var includeCancelled = true; // bool | Indicates if cancelled services (if they exist) are returned (default = false) - metropolitan train only
 var expand = []; // List<String> | List objects to be returned in full (i.e. expanded) - options include: all, stop, route, run, direction, disruption
-var token = token_example; // String | Please ignore
 
 try { 
-    var result = api_instance.departuresGetForStop(routeType, stopId, platformNumbers, directionId, lookBackwards, gtfs, dateUtc, maxResults, includeCancelled, expand, token);
+    var result = api_instance.departuresGetForStop(routeType, stopId, platformNumbers, directionId, lookBackwards, gtfs, dateUtc, maxResults, includeCancelled, expand);
     print(result);
 } catch (e) {
     print("Exception when calling DeparturesApi->departuresGetForStop: $e\n");
@@ -57,7 +56,6 @@ Name | Type | Description  | Notes
  **maxResults** | **int**| Maximum number of results returned | [optional] [default to null]
  **includeCancelled** | **bool**| Indicates if cancelled services (if they exist) are returned (default &#x3D; false) - metropolitan train only | [optional] [default to null]
  **expand** | [**List&lt;String&gt;**](String.md)| List objects to be returned in full (i.e. expanded) - options include: all, stop, route, run, direction, disruption | [optional] [default to []]
- **token** | **String**| Please ignore | [optional] [default to null]
 
 ### Return type
 
@@ -75,7 +73,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **departuresGetForStopAndRoute**
-> V3DeparturesResponse departuresGetForStopAndRoute(routeType, stopId, routeId, directionId, lookBackwards, gtfs, dateUtc, maxResults, includeCancelled, expand, token)
+> V3DeparturesResponse departuresGetForStopAndRoute(routeType, stopId, routeId, directionId, lookBackwards, gtfs, dateUtc, maxResults, includeCancelled, expand)
 
 View departures for a specific route from a stop
 
@@ -94,10 +92,9 @@ var dateUtc = 2013-10-20T19:20:30+01:00; // DateTime | Filter by the date and ti
 var maxResults = 56; // int | Maximum number of results returned
 var includeCancelled = true; // bool | Indicates if cancelled services (if they exist) are returned (default = false) - metropolitan train only
 var expand = []; // List<String> | List objects to be returned in full (i.e. expanded) - options include: all, stop, route, run, direction, disruption
-var token = token_example; // String | Please ignore
 
 try { 
-    var result = api_instance.departuresGetForStopAndRoute(routeType, stopId, routeId, directionId, lookBackwards, gtfs, dateUtc, maxResults, includeCancelled, expand, token);
+    var result = api_instance.departuresGetForStopAndRoute(routeType, stopId, routeId, directionId, lookBackwards, gtfs, dateUtc, maxResults, includeCancelled, expand);
     print(result);
 } catch (e) {
     print("Exception when calling DeparturesApi->departuresGetForStopAndRoute: $e\n");
@@ -118,7 +115,6 @@ Name | Type | Description  | Notes
  **maxResults** | **int**| Maximum number of results returned | [optional] [default to null]
  **includeCancelled** | **bool**| Indicates if cancelled services (if they exist) are returned (default &#x3D; false) - metropolitan train only | [optional] [default to null]
  **expand** | [**List&lt;String&gt;**](String.md)| List objects to be returned in full (i.e. expanded) - options include: all, stop, route, run, direction, disruption | [optional] [default to []]
- **token** | **String**| Please ignore | [optional] [default to null]
 
 ### Return type
 

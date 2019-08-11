@@ -10,7 +10,7 @@ class PatternsApi {
   /// View the stopping pattern for a specific trip/service run
   ///
   /// 
-  Future<V3StoppingPattern> patternsGetPatternByRun(int runId, int routeType, List<String> expand, { int stopId, DateTime dateUtc, String token }) async {
+  Future<V3StoppingPattern> patternsGetPatternByRun(int runId, int routeType, List<String> expand, { int stopId, DateTime dateUtc }) async {
     Object postBody;
 
     // verify required params are set
@@ -37,9 +37,6 @@ class PatternsApi {
     }
     if(dateUtc != null) {
       queryParams.addAll(_convertParametersForCollectionFormat("", "date_utc", dateUtc));
-    }
-    if(token != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat("", "token", token));
     }
 
     List<String> contentTypes = [];
