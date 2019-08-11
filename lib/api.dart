@@ -2,6 +2,7 @@ library ptv_api_client.api;
 
 import 'dart:async';
 import 'dart:convert';
+import 'package:crypto/crypto.dart';
 import 'package:http/http.dart';
 
 part 'api_client.dart';
@@ -85,6 +86,5 @@ part 'model/v3_stops_by_distance_response.dart';
 part 'model/v3_stops_on_route_response.dart';
 part 'model/v3_vehicle_descriptor.dart';
 part 'model/v3_vehicle_position.dart';
-
 
 ApiClient defaultApiClient = ApiClient();
