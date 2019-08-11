@@ -1,0 +1,9 @@
+name: ptv_api_client
+version: 0.0.1
+description: OpenAPI client for the Public Transport Victoria public API
+environment:
+  sdk: '>=2.0.0 <3.0.0'
+dependencies:
+  http: '>=0.12.0 <0.13.0'
+dev_dependencies:
+  test: ^1.3.0
