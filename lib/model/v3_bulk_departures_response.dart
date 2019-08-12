@@ -13,8 +13,8 @@ class V3BulkDeparturesResponse {
   List<V3Direction> directions = [];
   /* Disruption information applicable to relevant routes or stops */
   Map<String, V3Disruption> disruptions = {};
-  
-  V3Status status = null;
+
+  V3Status status;
   V3BulkDeparturesResponse();
 
   @override
@@ -27,7 +27,8 @@ class V3BulkDeparturesResponse {
     if (json['responses'] == null) {
       responses = null;
     } else {
-      responses = V3BulkDeparturesUpdateResponse.listFromJson(json['responses']);
+      responses =
+          V3BulkDeparturesUpdateResponse.listFromJson(json['responses']);
     }
     if (json['stops'] == null) {
       stops = null;
@@ -62,34 +63,32 @@ class V3BulkDeparturesResponse {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
-    if (responses != null)
-      json['responses'] = responses;
-    if (stops != null)
-      json['stops'] = stops;
-    if (routes != null)
-      json['routes'] = routes;
-    if (runs != null)
-      json['runs'] = runs;
-    if (directions != null)
-      json['directions'] = directions;
-    if (disruptions != null)
-      json['disruptions'] = disruptions;
-    if (status != null)
-      json['status'] = status;
+    Map<String, dynamic> json = {};
+    if (responses != null) json['responses'] = responses;
+    if (stops != null) json['stops'] = stops;
+    if (routes != null) json['routes'] = routes;
+    if (runs != null) json['runs'] = runs;
+    if (directions != null) json['directions'] = directions;
+    if (disruptions != null) json['disruptions'] = disruptions;
+    if (status != null) json['status'] = status;
     return json;
   }
 
   static List<V3BulkDeparturesResponse> listFromJson(List<dynamic> json) {
-    return json == null ? List<V3BulkDeparturesResponse>() : json.map((value) => V3BulkDeparturesResponse.fromJson(value)).toList();
+    return json == null
+        ? List<V3BulkDeparturesResponse>()
+        : json
+            .map((value) => V3BulkDeparturesResponse.fromJson(value))
+            .toList();
   }
 
-  static Map<String, V3BulkDeparturesResponse> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, V3BulkDeparturesResponse> mapFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, V3BulkDeparturesResponse>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = V3BulkDeparturesResponse.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = V3BulkDeparturesResponse.fromJson(value));
     }
     return map;
   }
 }
-

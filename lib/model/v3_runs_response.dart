@@ -3,8 +3,8 @@ part of ptv_api_client.api;
 class V3RunsResponse {
   /* Individual trips/services of a route */
   List<V3Run> runs = [];
-  
-  V3Status status = null;
+
+  V3Status status;
   V3RunsResponse();
 
   @override
@@ -27,24 +27,24 @@ class V3RunsResponse {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
-    if (runs != null)
-      json['runs'] = runs;
-    if (status != null)
-      json['status'] = status;
+    Map<String, dynamic> json = {};
+    if (runs != null) json['runs'] = runs;
+    if (status != null) json['status'] = status;
     return json;
   }
 
   static List<V3RunsResponse> listFromJson(List<dynamic> json) {
-    return json == null ? List<V3RunsResponse>() : json.map((value) => V3RunsResponse.fromJson(value)).toList();
+    return json == null
+        ? List<V3RunsResponse>()
+        : json.map((value) => V3RunsResponse.fromJson(value)).toList();
   }
 
   static Map<String, V3RunsResponse> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, V3RunsResponse>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = V3RunsResponse.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = V3RunsResponse.fromJson(value));
     }
     return map;
   }
 }
-

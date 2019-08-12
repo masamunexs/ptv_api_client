@@ -2,9 +2,9 @@ part of ptv_api_client.api;
 
 class V3DisruptionStop {
   /* Stop identifier */
-  int stopId = null;
+  int stopId;
   /* Name of stop */
-  String stopName = null;
+  String stopName;
   V3DisruptionStop();
 
   @override
@@ -17,34 +17,34 @@ class V3DisruptionStop {
     if (json['stop_id'] == null) {
       stopId = null;
     } else {
-          stopId = json['stop_id'];
+      stopId = json['stop_id'];
     }
     if (json['stop_name'] == null) {
       stopName = null;
     } else {
-          stopName = json['stop_name'];
+      stopName = json['stop_name'];
     }
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
-    if (stopId != null)
-      json['stop_id'] = stopId;
-    if (stopName != null)
-      json['stop_name'] = stopName;
+    Map<String, dynamic> json = {};
+    if (stopId != null) json['stop_id'] = stopId;
+    if (stopName != null) json['stop_name'] = stopName;
     return json;
   }
 
   static List<V3DisruptionStop> listFromJson(List<dynamic> json) {
-    return json == null ? List<V3DisruptionStop>() : json.map((value) => V3DisruptionStop.fromJson(value)).toList();
+    return json == null
+        ? List<V3DisruptionStop>()
+        : json.map((value) => V3DisruptionStop.fromJson(value)).toList();
   }
 
   static Map<String, V3DisruptionStop> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, V3DisruptionStop>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = V3DisruptionStop.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = V3DisruptionStop.fromJson(value));
     }
     return map;
   }
 }
-

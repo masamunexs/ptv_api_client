@@ -1,10 +1,9 @@
 part of ptv_api_client.api;
 
 class V3DisruptionsResponse {
-  
-  V3Disruptions disruptions = null;
-  
-  V3Status status = null;
+  V3Disruptions disruptions;
+
+  V3Status status;
   V3DisruptionsResponse();
 
   @override
@@ -27,24 +26,25 @@ class V3DisruptionsResponse {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
-    if (disruptions != null)
-      json['disruptions'] = disruptions;
-    if (status != null)
-      json['status'] = status;
+    Map<String, dynamic> json = {};
+    if (disruptions != null) json['disruptions'] = disruptions;
+    if (status != null) json['status'] = status;
     return json;
   }
 
   static List<V3DisruptionsResponse> listFromJson(List<dynamic> json) {
-    return json == null ? List<V3DisruptionsResponse>() : json.map((value) => V3DisruptionsResponse.fromJson(value)).toList();
+    return json == null
+        ? List<V3DisruptionsResponse>()
+        : json.map((value) => V3DisruptionsResponse.fromJson(value)).toList();
   }
 
-  static Map<String, V3DisruptionsResponse> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, V3DisruptionsResponse> mapFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, V3DisruptionsResponse>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = V3DisruptionsResponse.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = V3DisruptionsResponse.fromJson(value));
     }
     return map;
   }
 }
-

@@ -5,8 +5,8 @@ class V3StopsOnRouteResponse {
   List<V3StopOnRoute> stops = [];
   /* Disruption information applicable to relevant routes or stops */
   Map<String, V3Disruption> disruptions = {};
-  
-  V3Status status = null;
+
+  V3Status status;
   V3StopsOnRouteResponse();
 
   @override
@@ -34,26 +34,26 @@ class V3StopsOnRouteResponse {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
-    if (stops != null)
-      json['stops'] = stops;
-    if (disruptions != null)
-      json['disruptions'] = disruptions;
-    if (status != null)
-      json['status'] = status;
+    Map<String, dynamic> json = {};
+    if (stops != null) json['stops'] = stops;
+    if (disruptions != null) json['disruptions'] = disruptions;
+    if (status != null) json['status'] = status;
     return json;
   }
 
   static List<V3StopsOnRouteResponse> listFromJson(List<dynamic> json) {
-    return json == null ? List<V3StopsOnRouteResponse>() : json.map((value) => V3StopsOnRouteResponse.fromJson(value)).toList();
+    return json == null
+        ? List<V3StopsOnRouteResponse>()
+        : json.map((value) => V3StopsOnRouteResponse.fromJson(value)).toList();
   }
 
-  static Map<String, V3StopsOnRouteResponse> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, V3StopsOnRouteResponse> mapFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, V3StopsOnRouteResponse>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = V3StopsOnRouteResponse.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = V3StopsOnRouteResponse.fromJson(value));
     }
     return map;
   }
 }
-

@@ -3,8 +3,8 @@ part of ptv_api_client.api;
 class V3RouteTypesResponse {
   /* Transport mode identifiers */
   List<V3RouteType> routeTypes = [];
-  
-  V3Status status = null;
+
+  V3Status status;
   V3RouteTypesResponse();
 
   @override
@@ -27,24 +27,25 @@ class V3RouteTypesResponse {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
-    if (routeTypes != null)
-      json['route_types'] = routeTypes;
-    if (status != null)
-      json['status'] = status;
+    Map<String, dynamic> json = {};
+    if (routeTypes != null) json['route_types'] = routeTypes;
+    if (status != null) json['status'] = status;
     return json;
   }
 
   static List<V3RouteTypesResponse> listFromJson(List<dynamic> json) {
-    return json == null ? List<V3RouteTypesResponse>() : json.map((value) => V3RouteTypesResponse.fromJson(value)).toList();
+    return json == null
+        ? List<V3RouteTypesResponse>()
+        : json.map((value) => V3RouteTypesResponse.fromJson(value)).toList();
   }
 
-  static Map<String, V3RouteTypesResponse> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, V3RouteTypesResponse> mapFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, V3RouteTypesResponse>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = V3RouteTypesResponse.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = V3RouteTypesResponse.fromJson(value));
     }
     return map;
   }
 }
-

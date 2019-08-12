@@ -3,8 +3,8 @@ part of ptv_api_client.api;
 class V3OutletGeolocationResponse {
   /* myki ticket outlets */
   List<V3OutletGeolocation> outlets = [];
-  
-  V3Status status = null;
+
+  V3Status status;
   V3OutletGeolocationResponse();
 
   @override
@@ -27,24 +27,27 @@ class V3OutletGeolocationResponse {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
-    if (outlets != null)
-      json['outlets'] = outlets;
-    if (status != null)
-      json['status'] = status;
+    Map<String, dynamic> json = {};
+    if (outlets != null) json['outlets'] = outlets;
+    if (status != null) json['status'] = status;
     return json;
   }
 
   static List<V3OutletGeolocationResponse> listFromJson(List<dynamic> json) {
-    return json == null ? List<V3OutletGeolocationResponse>() : json.map((value) => V3OutletGeolocationResponse.fromJson(value)).toList();
+    return json == null
+        ? List<V3OutletGeolocationResponse>()
+        : json
+            .map((value) => V3OutletGeolocationResponse.fromJson(value))
+            .toList();
   }
 
-  static Map<String, V3OutletGeolocationResponse> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, V3OutletGeolocationResponse> mapFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, V3OutletGeolocationResponse>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = V3OutletGeolocationResponse.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = V3OutletGeolocationResponse.fromJson(value));
     }
     return map;
   }
 }
-

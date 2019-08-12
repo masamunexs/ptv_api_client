@@ -2,13 +2,13 @@ part of ptv_api_client.api;
 
 class V3DisruptionDirection {
   /* Route and direction of travel combination identifier */
-  int routeDirectionId = null;
+  int routeDirectionId;
   /* Direction of travel identifier */
-  int directionId = null;
+  int directionId;
   /* Name of direction of travel */
-  String directionName = null;
+  String directionName;
   /* Time of service to which disruption applies, in 24 hour clock format (HH:MM:SS) AEDT/AEST; returns null if disruption applies to multiple (or no) services */
-  String serviceTime = null;
+  String serviceTime;
   V3DisruptionDirection();
 
   @override
@@ -21,48 +21,47 @@ class V3DisruptionDirection {
     if (json['route_direction_id'] == null) {
       routeDirectionId = null;
     } else {
-          routeDirectionId = json['route_direction_id'];
+      routeDirectionId = json['route_direction_id'];
     }
     if (json['direction_id'] == null) {
       directionId = null;
     } else {
-          directionId = json['direction_id'];
+      directionId = json['direction_id'];
     }
     if (json['direction_name'] == null) {
       directionName = null;
     } else {
-          directionName = json['direction_name'];
+      directionName = json['direction_name'];
     }
     if (json['service_time'] == null) {
       serviceTime = null;
     } else {
-          serviceTime = json['service_time'];
+      serviceTime = json['service_time'];
     }
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
-    if (routeDirectionId != null)
-      json['route_direction_id'] = routeDirectionId;
-    if (directionId != null)
-      json['direction_id'] = directionId;
-    if (directionName != null)
-      json['direction_name'] = directionName;
-    if (serviceTime != null)
-      json['service_time'] = serviceTime;
+    Map<String, dynamic> json = {};
+    if (routeDirectionId != null) json['route_direction_id'] = routeDirectionId;
+    if (directionId != null) json['direction_id'] = directionId;
+    if (directionName != null) json['direction_name'] = directionName;
+    if (serviceTime != null) json['service_time'] = serviceTime;
     return json;
   }
 
   static List<V3DisruptionDirection> listFromJson(List<dynamic> json) {
-    return json == null ? List<V3DisruptionDirection>() : json.map((value) => V3DisruptionDirection.fromJson(value)).toList();
+    return json == null
+        ? List<V3DisruptionDirection>()
+        : json.map((value) => V3DisruptionDirection.fromJson(value)).toList();
   }
 
-  static Map<String, V3DisruptionDirection> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, V3DisruptionDirection> mapFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, V3DisruptionDirection>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = V3DisruptionDirection.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = V3DisruptionDirection.fromJson(value));
     }
     return map;
   }
 }
-

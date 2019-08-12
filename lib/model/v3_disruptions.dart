@@ -111,48 +111,36 @@ class V3Disruptions {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
-    if (general != null)
-      json['general'] = general;
-    if (metroTrain != null)
-      json['metro_train'] = metroTrain;
-    if (metroTram != null)
-      json['metro_tram'] = metroTram;
-    if (metroBus != null)
-      json['metro_bus'] = metroBus;
-    if (regionalTrain != null)
-      json['regional_train'] = regionalTrain;
-    if (regionalCoach != null)
-      json['regional_coach'] = regionalCoach;
-    if (regionalBus != null)
-      json['regional_bus'] = regionalBus;
-    if (schoolBus != null)
-      json['school_bus'] = schoolBus;
-    if (telebus != null)
-      json['telebus'] = telebus;
-    if (nightBus != null)
-      json['night_bus'] = nightBus;
-    if (ferry != null)
-      json['ferry'] = ferry;
-    if (interstateTrain != null)
-      json['interstate_train'] = interstateTrain;
-    if (skybus != null)
-      json['skybus'] = skybus;
-    if (taxi != null)
-      json['taxi'] = taxi;
+    Map<String, dynamic> json = {};
+    if (general != null) json['general'] = general;
+    if (metroTrain != null) json['metro_train'] = metroTrain;
+    if (metroTram != null) json['metro_tram'] = metroTram;
+    if (metroBus != null) json['metro_bus'] = metroBus;
+    if (regionalTrain != null) json['regional_train'] = regionalTrain;
+    if (regionalCoach != null) json['regional_coach'] = regionalCoach;
+    if (regionalBus != null) json['regional_bus'] = regionalBus;
+    if (schoolBus != null) json['school_bus'] = schoolBus;
+    if (telebus != null) json['telebus'] = telebus;
+    if (nightBus != null) json['night_bus'] = nightBus;
+    if (ferry != null) json['ferry'] = ferry;
+    if (interstateTrain != null) json['interstate_train'] = interstateTrain;
+    if (skybus != null) json['skybus'] = skybus;
+    if (taxi != null) json['taxi'] = taxi;
     return json;
   }
 
   static List<V3Disruptions> listFromJson(List<dynamic> json) {
-    return json == null ? List<V3Disruptions>() : json.map((value) => V3Disruptions.fromJson(value)).toList();
+    return json == null
+        ? List<V3Disruptions>()
+        : json.map((value) => V3Disruptions.fromJson(value)).toList();
   }
 
   static Map<String, V3Disruptions> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, V3Disruptions>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = V3Disruptions.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = V3Disruptions.fromJson(value));
     }
     return map;
   }
 }
-

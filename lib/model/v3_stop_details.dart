@@ -4,23 +4,23 @@ class V3StopDetails {
   /* Disruption information identifier(s) */
   List<int> disruptionIds = [];
   /* Type of metropolitan train station (i.e. \"Premium\", \"Host\" or \"Unstaffed\" station); returns null for V/Line train */
-  String stationType = null;
+  String stationType;
   /* The definition applicable to the station_type; returns null for V/Line train */
-  String stationDescription = null;
+  String stationDescription;
   /* Transport mode identifier */
-  int routeType = null;
-  
-  V3StopLocation stopLocation = null;
-  
-  V3StopAmenityDetails stopAmenities = null;
-  
-  V3StopAccessibility stopAccessibility = null;
-  
-  V3StopStaffing stopStaffing = null;
+  int routeType;
+
+  V3StopLocation stopLocation;
+
+  V3StopAmenityDetails stopAmenities;
+
+  V3StopAccessibility stopAccessibility;
+
+  V3StopStaffing stopStaffing;
   /* Stop identifier */
-  int stopId = null;
+  int stopId;
   /* Name of stop */
-  String stopName = null;
+  String stopName;
   V3StopDetails();
 
   @override
@@ -38,17 +38,17 @@ class V3StopDetails {
     if (json['station_type'] == null) {
       stationType = null;
     } else {
-          stationType = json['station_type'];
+      stationType = json['station_type'];
     }
     if (json['station_description'] == null) {
       stationDescription = null;
     } else {
-          stationDescription = json['station_description'];
+      stationDescription = json['station_description'];
     }
     if (json['route_type'] == null) {
       routeType = null;
     } else {
-          routeType = json['route_type'];
+      routeType = json['route_type'];
     }
     if (json['stop_location'] == null) {
       stopLocation = null;
@@ -63,7 +63,8 @@ class V3StopDetails {
     if (json['stop_accessibility'] == null) {
       stopAccessibility = null;
     } else {
-      stopAccessibility = V3StopAccessibility.fromJson(json['stop_accessibility']);
+      stopAccessibility =
+          V3StopAccessibility.fromJson(json['stop_accessibility']);
     }
     if (json['stop_staffing'] == null) {
       stopStaffing = null;
@@ -73,50 +74,46 @@ class V3StopDetails {
     if (json['stop_id'] == null) {
       stopId = null;
     } else {
-          stopId = json['stop_id'];
+      stopId = json['stop_id'];
     }
     if (json['stop_name'] == null) {
       stopName = null;
     } else {
-          stopName = json['stop_name'];
+      stopName = json['stop_name'];
     }
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
-    if (disruptionIds != null)
-      json['disruption_ids'] = disruptionIds;
-    if (stationType != null)
-      json['station_type'] = stationType;
-    if (stationDescription != null)
+    Map<String, dynamic> json = {};
+    if (disruptionIds != null) json['disruption_ids'] = disruptionIds;
+    if (stationType != null) json['station_type'] = stationType;
+    if (stationDescription != null) {
       json['station_description'] = stationDescription;
-    if (routeType != null)
-      json['route_type'] = routeType;
-    if (stopLocation != null)
-      json['stop_location'] = stopLocation;
-    if (stopAmenities != null)
-      json['stop_amenities'] = stopAmenities;
-    if (stopAccessibility != null)
+    }
+    if (routeType != null) json['route_type'] = routeType;
+    if (stopLocation != null) json['stop_location'] = stopLocation;
+    if (stopAmenities != null) json['stop_amenities'] = stopAmenities;
+    if (stopAccessibility != null) {
       json['stop_accessibility'] = stopAccessibility;
-    if (stopStaffing != null)
-      json['stop_staffing'] = stopStaffing;
-    if (stopId != null)
-      json['stop_id'] = stopId;
-    if (stopName != null)
-      json['stop_name'] = stopName;
+    }
+    if (stopStaffing != null) json['stop_staffing'] = stopStaffing;
+    if (stopId != null) json['stop_id'] = stopId;
+    if (stopName != null) json['stop_name'] = stopName;
     return json;
   }
 
   static List<V3StopDetails> listFromJson(List<dynamic> json) {
-    return json == null ? List<V3StopDetails>() : json.map((value) => V3StopDetails.fromJson(value)).toList();
+    return json == null
+        ? List<V3StopDetails>()
+        : json.map((value) => V3StopDetails.fromJson(value)).toList();
   }
 
   static Map<String, V3StopDetails> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, V3StopDetails>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = V3StopDetails.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = V3StopDetails.fromJson(value));
     }
     return map;
   }
 }
-

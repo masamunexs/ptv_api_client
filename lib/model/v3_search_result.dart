@@ -7,8 +7,8 @@ class V3SearchResult {
   List<V3ResultRoute> routes = [];
   /* myki ticket outlets */
   List<V3ResultOutlet> outlets = [];
-  
-  V3Status status = null;
+
+  V3Status status;
   V3SearchResult();
 
   @override
@@ -41,28 +41,26 @@ class V3SearchResult {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
-    if (stops != null)
-      json['stops'] = stops;
-    if (routes != null)
-      json['routes'] = routes;
-    if (outlets != null)
-      json['outlets'] = outlets;
-    if (status != null)
-      json['status'] = status;
+    Map<String, dynamic> json = {};
+    if (stops != null) json['stops'] = stops;
+    if (routes != null) json['routes'] = routes;
+    if (outlets != null) json['outlets'] = outlets;
+    if (status != null) json['status'] = status;
     return json;
   }
 
   static List<V3SearchResult> listFromJson(List<dynamic> json) {
-    return json == null ? List<V3SearchResult>() : json.map((value) => V3SearchResult.fromJson(value)).toList();
+    return json == null
+        ? List<V3SearchResult>()
+        : json.map((value) => V3SearchResult.fromJson(value)).toList();
   }
 
   static Map<String, V3SearchResult> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, V3SearchResult>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = V3SearchResult.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = V3SearchResult.fromJson(value));
     }
     return map;
   }
 }
-

@@ -13,8 +13,8 @@ class V3DeparturesResponse {
   Map<String, V3Direction> directions = {};
   /* Disruption information applicable to relevant routes or stops */
   Map<String, V3Disruption> disruptions = {};
-  
-  V3Status status = null;
+
+  V3Status status;
   V3DeparturesResponse();
 
   @override
@@ -62,34 +62,30 @@ class V3DeparturesResponse {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
-    if (departures != null)
-      json['departures'] = departures;
-    if (stops != null)
-      json['stops'] = stops;
-    if (routes != null)
-      json['routes'] = routes;
-    if (runs != null)
-      json['runs'] = runs;
-    if (directions != null)
-      json['directions'] = directions;
-    if (disruptions != null)
-      json['disruptions'] = disruptions;
-    if (status != null)
-      json['status'] = status;
+    Map<String, dynamic> json = {};
+    if (departures != null) json['departures'] = departures;
+    if (stops != null) json['stops'] = stops;
+    if (routes != null) json['routes'] = routes;
+    if (runs != null) json['runs'] = runs;
+    if (directions != null) json['directions'] = directions;
+    if (disruptions != null) json['disruptions'] = disruptions;
+    if (status != null) json['status'] = status;
     return json;
   }
 
   static List<V3DeparturesResponse> listFromJson(List<dynamic> json) {
-    return json == null ? List<V3DeparturesResponse>() : json.map((value) => V3DeparturesResponse.fromJson(value)).toList();
+    return json == null
+        ? List<V3DeparturesResponse>()
+        : json.map((value) => V3DeparturesResponse.fromJson(value)).toList();
   }
 
-  static Map<String, V3DeparturesResponse> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, V3DeparturesResponse> mapFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, V3DeparturesResponse>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = V3DeparturesResponse.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = V3DeparturesResponse.fromJson(value));
     }
     return map;
   }
 }
-

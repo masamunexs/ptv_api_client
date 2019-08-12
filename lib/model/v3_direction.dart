@@ -2,13 +2,13 @@ part of ptv_api_client.api;
 
 class V3Direction {
   /* Direction of travel identifier */
-  int directionId = null;
+  int directionId;
   /* Name of direction of travel */
-  String directionName = null;
+  String directionName;
   /* Route identifier */
-  int routeId = null;
+  int routeId;
   /* Transport mode identifier */
-  int routeType = null;
+  int routeType;
   V3Direction();
 
   @override
@@ -21,48 +21,46 @@ class V3Direction {
     if (json['direction_id'] == null) {
       directionId = null;
     } else {
-          directionId = json['direction_id'];
+      directionId = json['direction_id'];
     }
     if (json['direction_name'] == null) {
       directionName = null;
     } else {
-          directionName = json['direction_name'];
+      directionName = json['direction_name'];
     }
     if (json['route_id'] == null) {
       routeId = null;
     } else {
-          routeId = json['route_id'];
+      routeId = json['route_id'];
     }
     if (json['route_type'] == null) {
       routeType = null;
     } else {
-          routeType = json['route_type'];
+      routeType = json['route_type'];
     }
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
-    if (directionId != null)
-      json['direction_id'] = directionId;
-    if (directionName != null)
-      json['direction_name'] = directionName;
-    if (routeId != null)
-      json['route_id'] = routeId;
-    if (routeType != null)
-      json['route_type'] = routeType;
+    Map<String, dynamic> json = {};
+    if (directionId != null) json['direction_id'] = directionId;
+    if (directionName != null) json['direction_name'] = directionName;
+    if (routeId != null) json['route_id'] = routeId;
+    if (routeType != null) json['route_type'] = routeType;
     return json;
   }
 
   static List<V3Direction> listFromJson(List<dynamic> json) {
-    return json == null ? List<V3Direction>() : json.map((value) => V3Direction.fromJson(value)).toList();
+    return json == null
+        ? List<V3Direction>()
+        : json.map((value) => V3Direction.fromJson(value)).toList();
   }
 
   static Map<String, V3Direction> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, V3Direction>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = V3Direction.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = V3Direction.fromJson(value));
     }
     return map;
   }
 }
-

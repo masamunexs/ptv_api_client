@@ -1,16 +1,15 @@
 part of ptv_api_client.api;
 
 class V3DirectionWithDescription {
-  
-  String routeDirectionDescription = null;
+  String routeDirectionDescription;
   /* Direction of travel identifier */
-  int directionId = null;
+  int directionId;
   /* Name of direction of travel */
-  String directionName = null;
+  String directionName;
   /* Route identifier */
-  int routeId = null;
+  int routeId;
   /* Transport mode identifier */
-  int routeType = null;
+  int routeType;
   V3DirectionWithDescription();
 
   @override
@@ -23,55 +22,57 @@ class V3DirectionWithDescription {
     if (json['route_direction_description'] == null) {
       routeDirectionDescription = null;
     } else {
-          routeDirectionDescription = json['route_direction_description'];
+      routeDirectionDescription = json['route_direction_description'];
     }
     if (json['direction_id'] == null) {
       directionId = null;
     } else {
-          directionId = json['direction_id'];
+      directionId = json['direction_id'];
     }
     if (json['direction_name'] == null) {
       directionName = null;
     } else {
-          directionName = json['direction_name'];
+      directionName = json['direction_name'];
     }
     if (json['route_id'] == null) {
       routeId = null;
     } else {
-          routeId = json['route_id'];
+      routeId = json['route_id'];
     }
     if (json['route_type'] == null) {
       routeType = null;
     } else {
-          routeType = json['route_type'];
+      routeType = json['route_type'];
     }
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
-    if (routeDirectionDescription != null)
+    Map<String, dynamic> json = {};
+    if (routeDirectionDescription != null) {
       json['route_direction_description'] = routeDirectionDescription;
-    if (directionId != null)
-      json['direction_id'] = directionId;
-    if (directionName != null)
-      json['direction_name'] = directionName;
-    if (routeId != null)
-      json['route_id'] = routeId;
-    if (routeType != null)
-      json['route_type'] = routeType;
+    }
+    if (directionId != null) json['direction_id'] = directionId;
+    if (directionName != null) json['direction_name'] = directionName;
+    if (routeId != null) json['route_id'] = routeId;
+    if (routeType != null) json['route_type'] = routeType;
     return json;
   }
 
   static List<V3DirectionWithDescription> listFromJson(List<dynamic> json) {
-    return json == null ? List<V3DirectionWithDescription>() : json.map((value) => V3DirectionWithDescription.fromJson(value)).toList();
+    return json == null
+        ? List<V3DirectionWithDescription>()
+        : json
+            .map((value) => V3DirectionWithDescription.fromJson(value))
+            .toList();
   }
 
-  static Map<String, V3DirectionWithDescription> mapFromJson(Map<String, dynamic> json) {
+  static Map<String, V3DirectionWithDescription> mapFromJson(
+      Map<String, dynamic> json) {
     var map = Map<String, V3DirectionWithDescription>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = V3DirectionWithDescription.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = V3DirectionWithDescription.fromJson(value));
     }
     return map;
   }
 }
-

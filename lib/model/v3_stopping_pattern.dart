@@ -13,8 +13,8 @@ class V3StoppingPattern {
   Map<String, V3Run> runs = {};
   /* Directions of travel of route */
   Map<String, V3Direction> directions = {};
-  
-  V3Status status = null;
+
+  V3Status status;
   V3StoppingPattern();
 
   @override
@@ -62,34 +62,29 @@ class V3StoppingPattern {
   }
 
   Map<String, dynamic> toJson() {
-    Map <String, dynamic> json = {};
-    if (disruptions != null)
-      json['disruptions'] = disruptions;
-    if (departures != null)
-      json['departures'] = departures;
-    if (stops != null)
-      json['stops'] = stops;
-    if (routes != null)
-      json['routes'] = routes;
-    if (runs != null)
-      json['runs'] = runs;
-    if (directions != null)
-      json['directions'] = directions;
-    if (status != null)
-      json['status'] = status;
+    Map<String, dynamic> json = {};
+    if (disruptions != null) json['disruptions'] = disruptions;
+    if (departures != null) json['departures'] = departures;
+    if (stops != null) json['stops'] = stops;
+    if (routes != null) json['routes'] = routes;
+    if (runs != null) json['runs'] = runs;
+    if (directions != null) json['directions'] = directions;
+    if (status != null) json['status'] = status;
     return json;
   }
 
   static List<V3StoppingPattern> listFromJson(List<dynamic> json) {
-    return json == null ? List<V3StoppingPattern>() : json.map((value) => V3StoppingPattern.fromJson(value)).toList();
+    return json == null
+        ? List<V3StoppingPattern>()
+        : json.map((value) => V3StoppingPattern.fromJson(value)).toList();
   }
 
   static Map<String, V3StoppingPattern> mapFromJson(Map<String, dynamic> json) {
     var map = Map<String, V3StoppingPattern>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = V3StoppingPattern.fromJson(value));
+      json.forEach((String key, dynamic value) =>
+          map[key] = V3StoppingPattern.fromJson(value));
     }
     return map;
   }
 }
-
