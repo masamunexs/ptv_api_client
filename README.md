@@ -40,38 +40,23 @@ Dart 2.0 or later
 
 ## Installation & Usage
 
-### Github
-If this Dart package is published to Github, please include the following in pubspec.yaml
+Add the following dependency to your pubspec.yaml
 ```
-name: ptv_api_client
-version: 0.0.1
-description: OpenAPI API client for the Public Transport Victoria public API
 dependencies:
   ptv_api_client:
     git: https://github.com/nickmeinhold/ptv_api_client.git
-      version: 'any'
 ```
 
-### Local
-To use the package in your local drive, please include the following in pubspec.yaml
-```
-dependencies:
-  ptv_api_client:
-    path: /path/to/ptv_api_client
-```
-
-### Credentials for signature 
+### Set credentials for signature 
 
 A signature is automatically calculated for each API call, using credentials of an API key and developer ID. Follow the instructions at https://www.ptv.vic.gov.au/footer/data-and-reporting/datasets/ptv-timetable-api/ to obtain your credentials. 
 
-Before making any API calls, use 
+Before making any API calls, set the credentials with: 
 ```Dart
 defaultClient.setCredentials(String apiKey, String devId)
 ```
 
-to set the credentials. 
-
-`defaultClient` is a public global that is used by default in all of the specific API classes.
+The `defaultClient` is a public global used by all of the specific API classes (such as StopsAPI) by default.
 
 ## Tests
 
